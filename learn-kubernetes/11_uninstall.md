@@ -104,3 +104,20 @@ Errors were encountered while processing:
 E: Sub-process /usr/bin/dpkg returned an error code (1)
 ```
 > sudo rm -rf ~/.kube
+
+
+## some other reference
+
+[github issue](https://github.com/nginx-proxy/nginx-proxy/issues/839)
+```
+docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker volume rm $(docker volume ls -qf dangling=true)
+docker network rm $(docker network ls -q)
+sudo lsof -nP | grep LISTEN
+sudo kill -9 1548
+```
+[stackoverflow](https://stackoverflow.com/questions/39508018/docker-driver-failed-programming-external-connectivity-on-endpoint-webserver)
+```
+ sudo service docker stop
+ sudo rm /var/lib/docker/network/files/local-kv.db
+ sudo service docker start
+```
