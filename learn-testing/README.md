@@ -18,3 +18,13 @@ assertThat(a, is(b));
 - [Pattern](http://xunitpatterns.com)
 - [Mockito - How to write good tests](https://github.com/mockito/mockito/wiki/How-to-write-good-tests) or [Mockito Best Practice](https://stackoverflow.com/questions/22540108/best-practices-with-mockito)
 - [in28minutes:Mockito](https://github.com/in28minutes/MockitoTutorialForBeginners/blob/master/Step18.md), [video](https://www.udemy.com/course/mockito-tutorial-with-junit-examples/learn/lecture/5678796#bookmarks)
+
+### [Real World Mock](https://www.udemy.com/course/mockito-tutorial-with-junit-examples/learn/lecture/5678776#bookmarks) 
+
+- business-impl extends business-api
+- business-api composite of data-api, data-impl
+
+### Issue encountered
+
+- PowerMockito
+    -   result in ObjenesisException if using higher than Java 8
