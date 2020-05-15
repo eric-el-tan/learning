@@ -10,7 +10,9 @@
 -	given/when/then format
 ```code
 @Mock List listMock;
-given(listMock.size).willReturn(5); actual logic; assertThat(a, is(b));
+given(listMock.size).willReturn(5);
+actual logic;
+assertThat(a, is(b));
 ```
 - [FIRST](https://pragprog.com/magazines/2012-01/unit-tests-are-first)
 - [Pattern](http://xunitpatterns.com)
