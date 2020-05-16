@@ -1,8 +1,10 @@
 # SonarQube
 
+See how well other do on [SonarCloud](https://sonarcloud.io/explore/projects?languages=java&sort=-analysis_date)
+
 ## Install via Docker
 
-- Because Release 7.9 LTS Upgrade Notes: The SonarQube server now requires Java 11. Analyses may continue to use Java 8 if necessary.
+- [Release 7.9 LTS Upgrade Notes](https://docs.sonarqube.org/latest/setup/upgrade-notes): The SonarQube server now requires Java 11. Analyses may continue to use Java 8 if necessary.
 ```
 WrapperSimpleApp: Encountered an error running main: java.lang.IllegalStateException: SonarQube requires Java 11 to run
 java.lang.IllegalStateException: SonarQube requires Java 11 to run
@@ -600,8 +602,23 @@ Timeslot{day=2020-05-21, hour=1, shopper=[User{id=1}]}
 [INFO] Total time:  15.886 s
 [INFO] Finished at: 2020-05-17T03:44:39+12:00
 [INFO] ------------------------------------------------------------------------
-erictan@coding /v/l/g/f/demo> 
+```
 
+## configure
 
+- [SonarScanner for Maven](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven)
+
+## add Jacoco Test Coverage
 
 ```
+<plugin>
+	<groupId>org.jacoco</groupId>
+	<artifactId>jacoco-maven-plugin</artifactId>
+</plugin>
+```
+> mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install
+>
+> cd target/
+>
+> ls -l jacoco.exec
+
