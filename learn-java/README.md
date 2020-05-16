@@ -7,5 +7,5 @@
 
 ## Code Quality
 
-- [SonarLint](https://youtu.be/T3eM5X_ohzI)
-- [Test Coverage + SonarQube](https://youtu.be/BuT1Ji0P9Ug)
+- [SonarLint](https://www.sonarlint.org/intellij), [video](https://youtu.be/T3eM5X_ohzI)
+- Test Coverage + [SonarQube](https://www.sonarqube.org), [video](https://youtu.be/BuT1Ji0P9Ug)
