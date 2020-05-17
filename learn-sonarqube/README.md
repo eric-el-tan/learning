@@ -608,14 +608,55 @@ Timeslot{day=2020-05-21, hour=1, shopper=[User{id=1}]}
 
 - [SonarScanner for Maven](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven)
 
+```
+<plugin>
+	<groupId>org.sonarsource.scanner.maven</groupId>
+	<artifactId>sonar-maven-plugin</artifactId>
+</plugin>
+```
+			
 ## add Jacoco Test Coverage
 
 ```
 <plugin>
-	<groupId>org.jacoco</groupId>
-	<artifactId>jacoco-maven-plugin</artifactId>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <!--<version>0.7.7.201606060606</version>-->
+    <executions>
+        <execution>
+            <goals>
+                <goal>prepare-agent</goal>CodeOps
+            </goals>
+        </execution>
+        <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+        <execution>
+            <id>jacoco-check</id>
+            <goals>
+                <goal>check</goal>
+            </goals>
+            <configuration>
+                <rules>
+                    <rule>
+                        <limits>
+                            <limit>
+                                <minimum>0.9</minimum>
+                            </limit>
+                        </limits>
+                    </rule>
+                </rules>
+            </configuration>
+        </execution>
+    </executions>
 </plugin>
 ```
+- as suggested by [Samuel Addico
+](https://medium.com/codeops/code-coverage-with-jacoco-sonarqube-and-maven-59fb04a9a383)
 > mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install
 >
 > cd target/
