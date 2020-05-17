@@ -367,256 +367,19 @@ OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in ve
 1. Log in to http://localhost:9000 with System Administrator credentials (login=admin, password=admin).
 1. Click the Create new project button to analyze your first project.
 
-## Add project to SonarQube
+## Add sonarsource scanner
 
-pom.xml add plugin
+- [SonarScanner for Maven](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven)
+pom.xml
 ```
 <plugin>
     <groupId>org.sonarsource.scanner.maven</groupId>
     <artifactId>sonar-maven-plugin</artifactId>
 </plugin>
 ```
-
-> mvn clean package
-
-```
-[INFO] Scanning for projects...
-[WARNING] 
-[WARNING] Some problems were encountered while building the effective model for com.foodstuff:demo:jar:0.0.1-SNAPSHOT
-[WARNING] 'build.plugins.plugin.version' for org.sonarsource.scanner.maven:sonar-maven-plugin is missing. @ line 46, column 12
-[WARNING] 
-[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
-[WARNING] 
-[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
-[WARNING] 
-[INFO] 
-[INFO] -------------------------< com.foodstuff:demo >-------------------------
-[INFO] Building demo 0.0.1-SNAPSHOT
-[INFO] --------------------------------[ jar ]---------------------------------
-[WARNING] The POM for com.jayway.jsonpath:json-path:jar:2.4.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
-[WARNING] The POM for org.skyscreamer:jsonassert:jar:1.5.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
-[INFO] 
-[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ demo ---
-[INFO] Deleting /var/local/git/foodstuff2/demo/target
-[INFO] 
-[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ demo ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 1 resource
-[INFO] Copying 0 resource
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ demo ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 4 source files to /var/local/git/foodstuff2/demo/target/classes
-[INFO] 
-[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ demo ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /var/local/git/foodstuff2/demo/src/test/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ demo ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 2 source files to /var/local/git/foodstuff2/demo/target/test-classes
-[INFO] 
-[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ demo ---
-[WARNING] The POM for junit:junit:jar:4.12 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
-[INFO] 
-[INFO] -------------------------------------------------------
-[INFO]  T E S T S
-[INFO] -------------------------------------------------------
-[INFO] Running com.foodstuff.demo.DemoApplicationTests
-03:43:46.275 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-03:43:46.292 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-03:43:46.341 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.foodstuff.demo.DemoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-03:43:46.367 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.foodstuff.demo.DemoApplicationTests], using SpringBootContextLoader
-03:43:46.373 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.foodstuff.demo.DemoApplicationTests]: class path resource [com/foodstuff/demo/DemoApplicationTests-context.xml] does not exist
-03:43:46.373 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.foodstuff.demo.DemoApplicationTests]: class path resource [com/foodstuff/demo/DemoApplicationTestsContext.groovy] does not exist
-03:43:46.374 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.foodstuff.demo.DemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-03:43:46.375 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.foodstuff.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-03:43:46.431 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.foodstuff.demo.DemoApplicationTests]
-03:43:46.523 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/local/git/foodstuff2/demo/target/classes/com/foodstuff/demo/DemoApplication.class]
-03:43:46.524 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.foodstuff.demo.DemoApplication for test class com.foodstuff.demo.DemoApplicationTests
-03:43:46.655 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.foodstuff.demo.DemoApplicationTests]: using defaults.
-03:43:46.656 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-03:43:46.667 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
-03:43:46.669 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
-03:43:46.670 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
-03:43:46.671 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15aab8c6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@33990a0c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4de4b452, org.springframework.test.context.support.DirtiesContextTestExecutionListener@50b5ac82, org.springframework.test.context.event.EventPublishingTestExecutionListener@101952da, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6babf3bf, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3059cbc, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7ea9e1e2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@24fcf36f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@10feca44]
-03:43:46.676 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@3e84448c testClass = DemoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@4a7f959b testClass = DemoApplicationTests, locations = '{}', classes = '{class com.foodstuff.demo.DemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@147ed70f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@15b204a1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@12b0404f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@794cb805, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
-03:43:46.692 [main] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@3e84448c testClass = DemoApplicationTests, testInstance = com.foodstuff.demo.DemoApplicationTests@1a18644, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@4a7f959b testClass = DemoApplicationTests, locations = '{}', classes = '{class com.foodstuff.demo.DemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@147ed70f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@15b204a1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@12b0404f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@794cb805, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
-03:43:46.719 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.2.7.RELEASE)
-
-2020-05-17 03:43:47.036  INFO 19121 --- [           main] com.foodstuff.demo.DemoApplicationTests  : Starting DemoApplicationTests on coding with PID 19121 (started by erictan in /var/local/git/foodstuff2/demo)
-2020-05-17 03:43:47.038  INFO 19121 --- [           main] com.foodstuff.demo.DemoApplicationTests  : No active profile set, falling back to default profiles: default
-2020-05-17 03:43:47.649  INFO 19121 --- [           main] com.foodstuff.demo.DemoApplicationTests  : Started DemoApplicationTests in 0.927 seconds (JVM running for 2.217)
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.744 s - in com.foodstuff.demo.DemoApplicationTests
-[INFO] Running com.foodstuff.demo.repository.TestTimeslotRepository
-Timeslot{day=2020-05-18, hour=1, shopper=[User{id=1}, User{id=2}, User{id=3}, User{id=4}, User{id=5}, User{id=6}, User{id=7}, User{id=8}]}
-Timeslot{day=2020-05-19, hour=1, shopper=[User{id=1}]}
-Timeslot{day=2020-05-20, hour=1, shopper=[User{id=1}]}
-Timeslot{day=2020-05-21, hour=1, shopper=[User{id=1}]}
-{0=0, 1=1, 2=2, 3=3, 4=2, 5=0, 6=0, 7=0, 8=0, 9=0, 10=0, 11=0, 12=0, 13=0, 14=0, 15=0, 16=0, 17=0, 18=0, 19=0, 20=0, 21=0, 22=0, 23=0}
-[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in com.foodstuff.demo.repository.TestTimeslotRepository
-[INFO] 
-[INFO] Results:
-[INFO] 
-[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
-[INFO] 
-[INFO] 
-[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ demo ---
-[INFO] Building jar: /var/local/git/foodstuff2/demo/target/demo-0.0.1-SNAPSHOT.jar
-[INFO] 
-[INFO] --- spring-boot-maven-plugin:2.2.7.RELEASE:repackage (repackage) @ demo ---
-[INFO] Replacing main artifact with repackaged archive
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  7.684 s
-[INFO] Finished at: 2020-05-17T03:43:49+12:00
-[INFO] ------------------------------------------------------------------------
-```
-> mvn sonar:sonar
-```
-[INFO] Scanning for projects...
-[WARNING] 
-[WARNING] Some problems were encountered while building the effective model for com.foodstuff:demo:jar:0.0.1-SNAPSHOT
-[WARNING] 'build.plugins.plugin.version' for org.sonarsource.scanner.maven:sonar-maven-plugin is missing. @ line 46, column 12
-[WARNING] 
-[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
-[WARNING] 
-[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
-[WARNING] 
-[INFO] 
-[INFO] -------------------------< com.foodstuff:demo >-------------------------
-[INFO] Building demo 0.0.1-SNAPSHOT
-[INFO] --------------------------------[ jar ]---------------------------------
-[WARNING] The POM for com.jayway.jsonpath:json-path:jar:2.4.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
-[WARNING] The POM for org.skyscreamer:jsonassert:jar:1.5.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
-[INFO] 
-[INFO] --- sonar-maven-plugin:3.7.0.1746:sonar (default-cli) @ demo ---
-[INFO] User cache: /home/erictan/.sonar/cache
-[INFO] SonarQube version: 8.3.1
-[INFO] Default locale: "en_HK", source code encoding: "UTF-8"
-[WARNING] SonarScanner will require Java 11 to run starting in SonarQube 8.x
-[INFO] Load global settings
-[INFO] Load global settings (done) | time=158ms
-[INFO] Server id: BF41A1F2-AXId9uFML5Z3utAYfBhM
-[INFO] User cache: /home/erictan/.sonar/cache
-[INFO] Load/download plugins
-[INFO] Load plugins index
-[INFO] Load plugins index (done) | time=90ms
-[INFO] Load/download plugins (done) | time=144ms
-[INFO] Process project properties
-[INFO] Process project properties (done) | time=16ms
-[INFO] Execute project builders
-[INFO] Execute project builders (done) | time=5ms
-[INFO] Project key: com.foodstuff:demo
-[INFO] Base dir: /var/local/git/foodstuff2/demo
-[INFO] Working dir: /var/local/git/foodstuff2/demo/target/sonar
-[INFO] Load project settings for component key: 'com.foodstuff:demo'
-[INFO] Load project settings for component key: 'com.foodstuff:demo' (done) | time=77ms
-[INFO] Load quality profiles
-[INFO] Load quality profiles (done) | time=128ms
-[INFO] Load active rules
-[INFO] Load active rules (done) | time=2797ms
-[INFO] Indexing files...
-[INFO] Project configuration:
-[INFO] 7 files indexed
-[INFO] 0 files ignored because of scm ignore settings
-[INFO] Quality profile for java: Sonar way
-[INFO] Quality profile for xml: Sonar way
-[INFO] ------------- Run sensors on module demo
-[INFO] Load metrics repository
-[INFO] Load metrics repository (done) | time=48ms
-[INFO] Sensor JavaSquidSensor [java]
-[INFO] Configured Java source version (sonar.java.source): 8
-[INFO] JavaClasspath initialization
-[INFO] JavaClasspath initialization (done) | time=16ms
-[INFO] JavaTestClasspath initialization
-[INFO] JavaTestClasspath initialization (done) | time=3ms
-[INFO] Java Main Files AST scan
-[INFO] 4 source files to be analyzed
-[INFO] Load project repositories
-[INFO] Load project repositories (done) | time=37ms
-[INFO] 4/4 source files have been analyzed
-[INFO] Java Main Files AST scan (done) | time=2400ms
-[INFO] Java Test Files AST scan
-[INFO] 2 source files to be analyzed
-[INFO] Java Test Files AST scan (done) | time=266ms
-[INFO] 2/2 source files have been analyzed
-[INFO] Java Generated Files AST scan
-[INFO] 0 source files to be analyzed
-[INFO] Java Generated Files AST scan (done) | time=1ms
-[INFO] Sensor JavaSquidSensor [java] (done) | time=2951ms
-[INFO] 0/0 source files have been analyzed
-[INFO] Sensor SonarCSS Rules [cssfamily]
-[INFO] No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
-[INFO] Sensor SonarCSS Rules [cssfamily] (done) | time=3ms
-[INFO] Sensor JaCoCo XML Report Importer [jacoco]
-[INFO] 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
-[INFO] No report imported, no coverage information will be imported by JaCoCo XML Report Importer
-[INFO] Sensor JaCoCo XML Report Importer [jacoco] (done) | time=5ms
-[INFO] Sensor SurefireSensor [java]
-[INFO] parsing [/var/local/git/foodstuff2/demo/target/surefire-reports]
-[INFO] Sensor SurefireSensor [java] (done) | time=55ms
-[INFO] Sensor JavaXmlSensor [java]
-[INFO] 1 source files to be analyzed
-[INFO] Sensor JavaXmlSensor [java] (done) | time=353ms
-[INFO] 1/1 source files have been analyzed
-[INFO] Sensor HTML [web]
-[INFO] Sensor HTML [web] (done) | time=5ms
-[INFO] Sensor XML Sensor [xml]
-[INFO] 1 source files to be analyzed
-[INFO] Sensor XML Sensor [xml] (done) | time=201ms
-[INFO] 1/1 source files have been analyzed
-[INFO] ------------- Run sensors on project
-[INFO] Sensor Zero Coverage Sensor
-[INFO] Sensor Zero Coverage Sensor (done) | time=20ms
-[INFO] Sensor Java CPD Block Indexer
-[INFO] Sensor Java CPD Block Indexer (done) | time=42ms
-[INFO] SCM Publisher SCM provider for this project is: git
-[INFO] SCM Publisher 1 source file to be analyzed
-[INFO] SCM Publisher 0/1 source files have been analyzed (done) | time=166ms
-[WARNING] Missing blame information for the following files:
-[WARNING]   * pom.xml
-[WARNING] This may lead to missing/broken features in SonarQube
-[INFO] CPD Executor 1 file had no CPD blocks
-[INFO] CPD Executor Calculating CPD for 3 files
-[INFO] CPD Executor CPD calculation finished (done) | time=13ms
-[INFO] Analysis report generated in 158ms, dir size=106 KB
-[INFO] Analysis report compressed in 65ms, zip size=25 KB
-[INFO] Analysis report uploaded in 70ms
-[INFO] ANALYSIS SUCCESSFUL, you can browse http://localhost:9000/dashboard?id=com.foodstuff%3Ademo
-[INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
-[INFO] More about the report processing at http://localhost:9000/api/ce/task?id=AXIeKKOsL5Z3utAYfD_E
-[INFO] Analysis total time: 12.377 s
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  15.886 s
-[INFO] Finished at: 2020-05-17T03:44:39+12:00
-[INFO] ------------------------------------------------------------------------
-```
-
-## configure
-
-- [SonarScanner for Maven](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven)
-
-```
-<plugin>
-	<groupId>org.sonarsource.scanner.maven</groupId>
-	<artifactId>sonar-maven-plugin</artifactId>
-</plugin>
-```
 			
-## add Jacoco Test Coverage
-
+## add Jacoco to sonar
+- as suggested by [Samuel Addico](https://medium.com/codeops/code-coverage-with-jacoco-sonarqube-and-maven-59fb04a9a383)
 ```
 <plugin>
     <groupId>org.jacoco</groupId>
@@ -655,8 +418,38 @@ Timeslot{day=2020-05-21, hour=1, shopper=[User{id=1}]}
     </executions>
 </plugin>
 ```
-- as suggested by [Samuel Addico
-](https://medium.com/codeops/code-coverage-with-jacoco-sonarqube-and-maven-59fb04a9a383)
+
+## build project
+
+> mvn clean install
+
+```
+[INFO] --- jacoco-maven-plugin:0.8.5:check (jacoco-check) @ demo ---
+[INFO] Loading execution data file /var/local/git/foodstuff2/demo/target/jacoco.exec
+[INFO] Analyzed bundle 'demo' with 4 classes
+[INFO] All coverage checks have been met.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ demo ---
+[INFO] Installing /var/local/git/foodstuff2/demo/target/demo-0.0.1-SNAPSHOT.jar to /home/erictan/.m2/repository/com/foodstuff/demo/0.0.1-SNAPSHOT/demo-0.0.1-SNAPSHOT.jar
+[INFO] Installing /var/local/git/foodstuff2/demo/pom.xml to /home/erictan/.m2/repository/com/foodstuff/demo/0.0.1-SNAPSHOT/demo-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.907 s
+[INFO] Finished at: 2020-05-18T01:13:48+12:00
+[INFO] ------------------------------------------------------------------------
+```
+> mvn sonar:sonar
+```
+[INFO] Analysis report generated in 126ms, dir size=108 KB
+[INFO] Analysis report compressed in 58ms, zip size=26 KB
+[INFO] Analysis report uploaded in 68ms
+[INFO] ANALYSIS SUCCESSFUL, you can browse http://localhost:9000/dashboard?id=com.foodstuff%3Ademo
+[INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] More about the report processing at http://localhost:9000/api/ce/task?id=AXIixmVML5Z3utAYfD_I
+
+```
+
 > mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install
 >
 > cd target/
