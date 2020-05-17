@@ -2,6 +2,10 @@
 
 See how well other do on [SonarCloud](https://sonarcloud.io/explore/projects?languages=java&sort=-analysis_date)
 
+
+## SonarCloud
+[My project](https://sonarcloud.io/organizations/eric-el-tan/projects) on sonarclound
+
 ## Install via Docker
 
 - [Release 7.9 LTS Upgrade Notes](https://docs.sonarqube.org/latest/setup/upgrade-notes): The SonarQube server now requires Java 11. Analyses may continue to use Java 8 if necessary.
