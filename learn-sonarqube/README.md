@@ -5,6 +5,7 @@ See how well other do on [SonarCloud](https://sonarcloud.io/explore/projects?lan
 
 ## SonarCloud
 [My project](https://sonarcloud.io/organizations/eric-el-tan/projects) on sonarclound
+[Other project](https://sonarcloud.io/explore/projects?languages=java&sort=-analysis_date)
 
 ## Install via Docker
 
