@@ -367,7 +367,35 @@ OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in ve
 1. Log in to http://localhost:9000 with System Administrator credentials (login=admin, password=admin).
 1. Click the Create new project button to analyze your first project.
 
-## Add sonarsource scanner
+## [Global Settings](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven) 
+
+- enable sonar:sonar for all maven project
+- edit the settings.xml file, located in $MAVEN_HOME/conf or ~/.m2, to set the plugin prefix and optionally the SonarQube server URL.
+
+```
+<settings>
+    <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://myserver:9000
+                </sonar.host.url>
+            </properties>
+        </profile>
+     </profiles>
+</settings>
+```
+or 
+
+## local project 
 
 - [SonarScanner for Maven](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven)
 pom.xml
@@ -377,7 +405,8 @@ pom.xml
     <artifactId>sonar-maven-plugin</artifactId>
 </plugin>
 ```
-			
+
+
 ## add Jacoco to sonar
 - as suggested by [Samuel Addico](https://medium.com/codeops/code-coverage-with-jacoco-sonarqube-and-maven-59fb04a9a383)
 ```
