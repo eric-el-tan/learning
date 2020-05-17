@@ -12,3 +12,4 @@
 ## API Documentation
 
 - [video](https://www.youtube.com/watch?v=scVliTfB3bU&list=PLnBvgoOXZNCN0E_oNPrY1wfPhYIXpKbMS&index=3)
+- [export PDF](http://rajeevdotnet.blogspot.com/2019/02/export-swagger-api-document-to-pdf.html)
