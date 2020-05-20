@@ -1,23 +1,33 @@
 # learn-jenkins
 
+following tutorial of [in28minutes](https://github.com/in28minutes/devops-master-class)
+
+
 ## install docker-compose
 
-install (https://docs.docker.com/compose/install) or [from digitalocean.com](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
+- from [docs.docker.com](https://docs.docker.com/compose/install),[how to install docker-compose in Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
+
+> sudo curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose
 ```
-$ sudo curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   638  100   638    0     0     39      0  0:00:16  0:00:16 --:--:--   184
 100 16.7M  100 16.7M    0     0   421k      0  0:00:40  0:00:40 --:--:-- 2240k
-$ sudo chmod +x /usr/local/bin/docker-compose
-$ docker-compose --version
+```
+> sudo chmod +x /usr/local/bin/docker-compose
+> docker-compose --version
+```
 docker-compose version 1.25.5, build 8a1c60f6
 ```
+
 ## install jenkins
+
 ref: [docker image](https://hub.docker.com/r/jenkins/jenkins), [github](https://github.com/jenkinsci/docker/blob/master/README.md)
+
+> cd /var/local/git/eric/devops-master-class/jenkins
+> docker-compose up
+
 ```
-$ cd /var/local/git/eric/devops-master-class/jenkins
-$ docker-compose up
 Pulling jenkins (jenkins/jenkins:lts)...
 lts: Pulling from jenkins/jenkins
 3192219afd04: Pull complete
@@ -114,13 +124,17 @@ nameserver 8.8.4.4
 nameserver 127.0.0.53
 ```
 
-## login jenkins
+## setup
 
-http://localhost:8081/login?from=%2F
+- login - http://localhost:8081/login?from=%2F
 
-copy and paste password
+- copy and paste password 
+    - e.g. 0c104b63001c41aebe4e238f0f7d104f
 
-https://docs.docker.com/compose/install/
+- auto installing plugins
+
+- prepare a sample github repository to be built by jenkins
+    - https://github.com/eric-el-tan/jenkins-devops-microservices.git
 
 
 
@@ -138,4 +152,6 @@ To verify that it was successful, run the following command which should return 
 ```
 which docker-compose
 ```
+
+
 
