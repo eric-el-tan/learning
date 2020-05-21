@@ -11,9 +11,7 @@
 - [backend](https://roadmap.sh/backend)
 - [devOps](https://roadmap.sh/devops)
 
-## Design Pattern
 
-- [design patterns for human](https://roadmap.sh/guides/design-patterns-for-humans)
 
 ## Codebase
 

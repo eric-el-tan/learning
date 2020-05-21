@@ -490,3 +490,15 @@ pom.xml
 >
 > ls -l jacoco.exec
 
+
+## restart
+
+> docker container ls -a
+```
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                    PORTS                                              NAMES
+41f774053437        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   34 hours ago        Up 34 hours               0.0.0.0:50000->50000/tcp, 0.0.0.0:8081->8080/tcp   jenkins
+eceef9b99ce3        sonarqube:latest      "bin/run.sh bin/sona…"   4 days ago          Exited (143) 3 days ago                                                      sonarqube
+```
+
+> docker rm -f sonarqube
+> docker run -d --name sonarqube -p 9000:9000 sonarqube:latest

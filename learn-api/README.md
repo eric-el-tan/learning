@@ -2,6 +2,8 @@
 
 ## Best Practice
 
+- [REST Security](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
+
 ## Unit Testing
 
 - [Rest-assured](https://www.toolsqa.com/rest-assured-tutorial)
