@@ -129,6 +129,7 @@ nameserver 127.0.0.53
 - login - http://localhost:8081/login?from=%2F
 
 - copy and paste password 
+
     - e.g. 0c104b63001c41aebe4e238f0f7d104f
 
 - auto installing plugins
