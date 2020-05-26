@@ -169,3 +169,74 @@ s.
  ◯ Emulators: Set up local emulators for Firebase features
 
 ```
+
+```
+erictan@coding /v/l/g/r/react-burger> rm .firebaserc 
+erictan@coding /v/l/g/r/react-burger> firebase init
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /var/local/git/react/react-burger
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing in an existing Firebase project directory
+
+? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm your choice
+s. Hosting: Configure and deploy Firebase Hosting sites
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add, 
+but for now we'll just set up a default project.
+
+i  Using project react-burger-43504 (react-burger)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? File build/index.html already exists. Overwrite? No
+i  Skipping write of build/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+i  Writing gitignore file to .gitignore...
+
+✔  Firebase initialization complete!
+```
+
+```
+erictan@coding /v/l/g/r/react-burger> firebase deploy
+
+=== Deploying to 'react-burger-43504'...
+
+i  deploying hosting
+i  hosting[react-burger-43504]: beginning deploy...
+i  hosting[react-burger-43504]: found 16 files in build
+✔  hosting[react-burger-43504]: file upload complete
+i  hosting[react-burger-43504]: finalizing version...
+✔  hosting[react-burger-43504]: version finalized
+i  hosting[react-burger-43504]: releasing new version...
+✔  hosting[react-burger-43504]: release complete
+
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/react-burger-43504/overview
+Hosting URL: https://react-burger-43504.web.app
+```
+
+- [Project Console](https://console.firebase.google.com/project/react-burger-43504/overview)
+- [Hosting URL](https://react-burger-43504.web.app)
