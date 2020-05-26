@@ -140,7 +140,7 @@ nameserver 127.0.0.53
 
 
 
-```
+
 remove docker-compose
 ```
 rm $(which docker-compose)
@@ -155,4 +155,6 @@ which docker-compose
 ```
 
 
-
+## problem Permission: Docker
+- [permission problem, need restart](https://blog.51cto.com/daibaiyang119/2436987)
+- [Docker in a Docker, need further configure](https://support.cloudbees.com/hc/en-us/articles/360001566111-Set-up-a-Docker-in-Docker-Agent-Template)
