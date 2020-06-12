@@ -9,6 +9,8 @@
 - [Start with nvm, npm, node and react](https://medium.com/@eisoftlabs/installing-and-using-nvm-npm-and-react-js-712bf612af20)
 - [15 VSCode extension](https://levelup.gitconnected.com/15-vs-code-extension-to-save-your-time-and-make-you-a-better-developer-506f79baec53)
 
+## Debugging
+- [Chrome Devtool Debugging](https://developers.google.com/web/tools/chrome-devtools/javascript)
 
 
 ## Deployment
@@ -240,3 +242,58 @@ Hosting URL: https://react-burger-43504.web.app
 
 - [Project Console](https://console.firebase.google.com/project/react-burger-43504/overview)
 - [Hosting URL](https://react-burger-43504.web.app)
+
+
+
+## Redeploy
+
+```
+erictan@coding /v/l/g/r/react-burger> npm run build
+
+> react-complete-guide@0.1.0 build /var/local/git/react/react-burger
+> node scripts/build.js
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  73.27 KB (+2 B)  build/static/js/main.1f10d6c6.js
+  3.28 KB          build/static/js/0.d972f980.chunk.js
+  2.68 KB          build/static/js/1.a3feb6ac.chunk.js
+  2.51 KB          build/static/css/main.454467de.css
+  1.5 KB           build/static/js/2.243ecda0.chunk.js
+
+The project was built assuming it is hosted at the server root.
+To override this, specify the homepage in your package.json.
+For example, add this to build it for GitHub Pages:
+
+  "homepage" : "http://myname.github.io/myapp",
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+```
+
+```
+erictan@coding /v/l/g/r/react-burger> firebase deploy
+=== Deploying to 'react-burger-43504'...
+
+i  deploying hosting
+i  hosting[react-burger-43504]: beginning deploy...
+i  hosting[react-burger-43504]: found 16 files in build
+✔  hosting[react-burger-43504]: file upload complete
+i  hosting[react-burger-43504]: finalizing version...
+✔  hosting[react-burger-43504]: version finalized
+i  hosting[react-burger-43504]: releasing new version...
+✔  hosting[react-burger-43504]: release complete
+
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/react-burger-43504/overview
+Hosting URL: https://react-burger-43504.web.app
+erictan@coding /v/l/g/r/react-burger> 
+```
