@@ -8,6 +8,7 @@
 - [Regular Expression](https://cheatography.com/davechild/cheat-sheets/regular-expressions)
 - [Java 8](https://dzone.com/articles/all-things-java-8?fromrel=true)
 - [Core Java](https://cheatography.com/evanescesn09/cheat-sheets/core-java)
+- [Java Guides](https://www.javaguides.net/p/about-me.html)
 
 ## Code Quality
 
