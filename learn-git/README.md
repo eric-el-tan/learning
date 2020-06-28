@@ -83,3 +83,19 @@ git help credentials
 
 ## [Merge conflict](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts)
 Need to study
+
+## [Delete branches](https://www.git-tower.com/learn/git/faq/delete-remote-branch)
+```
+git push origin --delete notification-feature 
+```
+```
+To https://github.com/eric-el-tan/learning.git
+ - [deleted]         notification-feature
+```
+
+```
+git branch -d notification-feature
+```
+``` 
+Deleted branch notification-feature (was 52e4107).
+```
