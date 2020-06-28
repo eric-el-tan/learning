@@ -9,3 +9,7 @@
 ## Code Quality
 
 - [SonarLint](https://www.sonarlint.org/intellij), [video](https://youtu.be/T3eM5X_ohzI)
+
+## Productivity
+
+- [Live Template](https://www.youtube.com/watch?v=ffBeoE6NNBSs)
