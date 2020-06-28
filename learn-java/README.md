@@ -8,12 +8,12 @@
 - [Regular Expression](https://cheatography.com/davechild/cheat-sheets/regular-expressions)
 - [Java 8](https://dzone.com/articles/all-things-java-8?fromrel=true)
 - [Core Java](https://cheatography.com/evanescesn09/cheat-sheets/core-java)
+- [Java Guides](https://www.javaguides.net/p/about-me.html)
 
 ## Code Quality
 
 - [SonarLint](https://www.sonarlint.org/intellij), [video](https://youtu.be/T3eM5X_ohzI)
 - Test Coverage + [SonarQube](https://www.sonarqube.org), [video](https://youtu.be/BuT1Ji0P9Ug
-
 
 ## Design Pattern
 
