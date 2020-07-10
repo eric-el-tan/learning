@@ -36,7 +36,7 @@ do not update version
 ```
 update to latest minor version 1.x.x 
 ```json
-'^1.12.0' 
+'^1.12.0'
 ```
 update to latest bug version 1.12.x
 ```json
