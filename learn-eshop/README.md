@@ -28,6 +28,10 @@ home/
 - [Paypal with Java](https://www.codejava.net/coding/how-to-integrate-paypal-payment-into-java-web-application)
 
 ### Shipment Tracking
+NZPost
+- [eShip](https://www.nzpost.co.nz/business/sending-within-nz/parcels/shipping-solutions-for-online-sellers/shipping-apis)
+- [Shipping APIs](https://www.nzpost.co.nz/business/sending-within-nz/parcels/shipping-solutions-for-online-sellers/shipping-apis)
+- [Integrate with Shopify](https://eshipnz.zendesk.com/hc/en-us/articles/212164138-Shopify-Integration)
 
 ### IP Tracing
 
