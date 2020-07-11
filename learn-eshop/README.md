@@ -2,22 +2,38 @@
 
 ## Case Study: [Pet Food](http://www.alfapet.me)
 
-### Website
-
-- structure
+### Website structure
 
 ```bash
-markdown-magic-directory-tree/
-├── .npmrc
-├── example.js
-├── index.js
-├── package.json
-├── README.md
-└── yarn.lock
+home/
+├── shop
+    └── product*
+        └── cart*
+            └── checkout*
+├── account*
+├── blog
+├── about
+└── contact
+```
+
+```
+*product (categories, reuse frame): all, sales, farm, sea, game, raw, natural treat
+*cart (features, diff functions): 
+ - continue shopping, add voucher, update quantity, view item detail, remove item, goto checkout
+*checkout (flow): location (in/out of auckland) -> registration -> ???
+*account: signup 
 ```
 
 ### Payment
 - [Paypal with Java](https://www.codejava.net/coding/how-to-integrate-paypal-payment-into-java-web-application)
+
+### Shipment Tracking
+
+### IP Tracing
+
+### Marketing
+- keyword for google search
+
 
 ### Studying Tools
 
