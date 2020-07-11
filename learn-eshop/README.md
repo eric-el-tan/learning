@@ -37,4 +37,4 @@ home/
 
 ### Studying Tools
 
-- Snipping Tools, [PicPick](https://picpick.app/en/start/?download=portable), at ```C:\Users\Eric\Desktop\Software\Tools\PicPick```
+- Snipping Tools, [PicPick](https://picpick.app/en/start/?download=portable), at ```C:\..\..\Desktop\Software\Tools\PicPick```
