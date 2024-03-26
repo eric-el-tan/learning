@@ -85,17 +85,15 @@ git help credentials
 Need to study
 
 ## [Delete branches](https://www.git-tower.com/learn/git/faq/delete-remote-branch)
-```
+delete remote branch
+```bash
 git push origin --delete notification-feature 
 ```
-```
-To https://github.com/eric-el-tan/learning.git
- - [deleted]         notification-feature
-```
-
-```
+delete local branch
+```bash
 git branch -d notification-feature
 ```
-``` 
-Deleted branch notification-feature (was 52e4107).
+force delete local branch
+```bash
+git branch -D notification-feature
 ```
