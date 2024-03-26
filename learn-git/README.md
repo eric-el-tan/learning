@@ -82,7 +82,18 @@ git help credentials
 ```
 
 ## [Merge conflict](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts)
-Need to study
+```bash
+git checkout master
+git pull origin master
+git checkout development-v1.0
+git rebase master
+git pull origin development-v1.0
+```
+--> resolve all conflict in IDE, then continue
+```bash
+git push origin development-v1.0
+```
+
 
 ## [Delete branches](https://www.git-tower.com/learn/git/faq/delete-remote-branch)
 delete remote branch
