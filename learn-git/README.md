@@ -41,17 +41,21 @@ git checkout -d dummybranch
 ## [branch](https://www.jquery-az.com/list-branches-git)
 list all branches in local and remote repositories is:
 
-list only the remote branches
+see the both local and remote branches
 ```
 $ git branch -a
 ```
-see the branches and their commits
+list only the remote branches
 ```
 $ git branch -r
 ```
-see the branches and their commits
+see the branches and their commits (use plugin: git len/git graph instead)
 ```
 $ git show-branch
+```
+refresh all remote branch
+```
+git remote prune origin
 ```
 
 ## Force Pull
